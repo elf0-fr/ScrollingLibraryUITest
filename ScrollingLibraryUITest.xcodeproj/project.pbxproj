@@ -6,8 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		76777F9B2D957A0C00F9240F /* ScrollingLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 76777F9A2D957A0C00F9240F /* ScrollingLibrary */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76777FEE2D95F05F00F9240F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76777F7F2D9579BC00F9240F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76777F862D9579BC00F9240F;
+			remoteInfo = ScrollingLibraryUITest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		76777F872D9579BD00F9240F /* ScrollingLibraryUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollingLibraryUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76777FE82D95F05F00F9240F /* LibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +31,23 @@
 			path = ScrollingLibraryUITest;
 			sourceTree = "<group>";
 		};
+		76777FE92D95F05F00F9240F /* LibraryUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LibraryUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		76777F842D9579BC00F9240F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76777F9B2D957A0C00F9240F /* ScrollingLibrary in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76777FE52D95F05F00F9240F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				76777F892D9579BD00F9240F /* ScrollingLibraryUITest */,
+				76777FE92D95F05F00F9240F /* LibraryUITests */,
 				76777F882D9579BD00F9240F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				76777F872D9579BD00F9240F /* ScrollingLibraryUITest.app */,
+				76777FE82D95F05F00F9240F /* LibraryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,10 +95,34 @@
 			);
 			name = ScrollingLibraryUITest;
 			packageProductDependencies = (
+				76777F9A2D957A0C00F9240F /* ScrollingLibrary */,
 			);
 			productName = ScrollingLibraryUITest;
 			productReference = 76777F872D9579BD00F9240F /* ScrollingLibraryUITest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		76777FE72D95F05F00F9240F /* LibraryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76777FF22D95F05F00F9240F /* Build configuration list for PBXNativeTarget "LibraryUITests" */;
+			buildPhases = (
+				76777FE42D95F05F00F9240F /* Sources */,
+				76777FE52D95F05F00F9240F /* Frameworks */,
+				76777FE62D95F05F00F9240F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76777FEF2D95F05F00F9240F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				76777FE92D95F05F00F9240F /* LibraryUITests */,
+			);
+			name = LibraryUITests;
+			packageProductDependencies = (
+			);
+			productName = LibraryUITests;
+			productReference = 76777FE82D95F05F00F9240F /* LibraryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +137,10 @@
 					76777F862D9579BC00F9240F = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					76777FE72D95F05F00F9240F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 76777F862D9579BC00F9240F;
+					};
 				};
 			};
 			buildConfigurationList = 76777F822D9579BC00F9240F /* Build configuration list for PBXProject "ScrollingLibraryUITest" */;
@@ -94,18 +152,29 @@
 			);
 			mainGroup = 76777F7E2D9579BC00F9240F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				76777F992D957A0C00F9240F /* XCLocalSwiftPackageReference "../ScrollingLibrary" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 76777F882D9579BD00F9240F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				76777F862D9579BC00F9240F /* ScrollingLibraryUITest */,
+				76777FE72D95F05F00F9240F /* LibraryUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		76777F852D9579BC00F9240F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76777FE62D95F05F00F9240F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +191,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76777FE42D95F05F00F9240F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76777FEF2D95F05F00F9240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76777F862D9579BC00F9240F /* ScrollingLibraryUITest */;
+			targetProxy = 76777FEE2D95F05F00F9240F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		76777F942D9579BE00F9240F /* Debug */ = {
@@ -274,7 +358,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -313,7 +397,58 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.2;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		76777FF02D95F05F00F9240F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DQFZB97R5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.romain-tirbisch.LibraryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = ScrollingLibraryUITest;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		76777FF12D95F05F00F9240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DQFZB97R5H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.romain-tirbisch.LibraryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = ScrollingLibraryUITest;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -338,7 +473,30 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		76777FF22D95F05F00F9240F /* Build configuration list for PBXNativeTarget "LibraryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76777FF02D95F05F00F9240F /* Debug */,
+				76777FF12D95F05F00F9240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		76777F992D957A0C00F9240F /* XCLocalSwiftPackageReference "../ScrollingLibrary" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../ScrollingLibrary;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		76777F9A2D957A0C00F9240F /* ScrollingLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ScrollingLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76777F7F2D9579BC00F9240F /* Project object */;
 }
