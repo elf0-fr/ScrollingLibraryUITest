@@ -16,7 +16,9 @@ struct ContentView: View {
         .carouselOneElement,
         .carouselTwoElements,
         .carouselThreeElements,
-        .carouselInsertAndRemoveElements
+        .carouselInsertAndRemoveElements,
+        .carouselUpdateOneElement,
+        .carouselAutoScrollingByDefault
     ]
     
     var searchResult: [Views] {
@@ -50,6 +52,12 @@ struct ContentView: View {
                     
                 case .carouselInsertAndRemoveElements:
                     CarouselInsertAndRemoveElements()
+                    
+                case .carouselUpdateOneElement:
+                    CarouselUpdateOneElement()
+                    
+                case .carouselAutoScrollingByDefault:
+                    CarouselAutoScrollingByDefault()
                 
                 default:
                     ContentUnavailableView("Case not handled", systemImage: "exclamationmark.circle")

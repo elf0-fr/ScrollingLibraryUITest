@@ -199,4 +199,48 @@ final class LibraryUITests: XCTestCase {
         decrementButton.tap()
         XCTAssert(carousel.otherElements["carouselElement_3"].wait(for: \.isHittable, toEqual: true, timeout: 3))
     }
+    
+    func testUpdateOneElement() throws {
+        searchField.firstMatch.typeText("06")
+        app.buttons["06: Update One Element"].tap()
+        
+        let carousel = app.scrollViews["carousel"]
+        XCTAssert(carousel.waitForExistence(timeout: 3))
+        
+        let button = app.buttons["Update The Third Element"]
+        XCTAssert(button.waitForExistence(timeout: 3))
+        
+        // Four subviews
+        for index in 0..<12 {
+            let childIdentifier = "carouselElement_\(index)"
+            let child = carousel.otherElements[childIdentifier]
+            XCTAssert(child.waitForExistence(timeout: 3))
+        }
+        XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        
+        // Third page
+        swipeLeft(carousel: carousel)
+        swipeLeft(carousel: carousel)
+        XCTAssert(carousel.otherElements["carouselElement_6"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        // Update the third page
+        button.tap()
+        XCTAssert(carousel.otherElements["carouselElement_6"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+    }
+    
+    func testAutoScrollingByDefault() throws {
+        searchField.firstMatch.typeText("07")
+        app.buttons["07: Auto Scrolling by Default"].tap()
+        
+        let carousel = app.scrollViews["carousel"]
+        XCTAssert(carousel.waitForExistence(timeout: 3))
+        
+        XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        XCTAssert(carousel.otherElements["carouselElement_5"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        sleep(3)
+        XCTAssert(carousel.otherElements["carouselElement_6"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        sleep(3)
+        XCTAssert(carousel.otherElements["carouselElement_7"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        sleep(3)
+        XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+    }
 }

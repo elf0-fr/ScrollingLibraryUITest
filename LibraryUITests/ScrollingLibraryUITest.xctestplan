@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "297561CC-EF81-4239-84A7-69126BE1464E",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "testTimeoutsEnabled" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ScrollingLibraryUITest.xcodeproj",
+      "identifier" : "76777F862D9579BC00F9240F",
+      "name" : "ScrollingLibraryUITest"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ScrollingLibraryUITest.xcodeproj",
+        "identifier" : "76777FE72D95F05F00F9240F",
+        "name" : "LibraryUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
