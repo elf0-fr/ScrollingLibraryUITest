@@ -234,13 +234,25 @@ final class LibraryUITests: XCTestCase {
         let carousel = app.scrollViews["carousel"]
         XCTAssert(carousel.waitForExistence(timeout: 3))
         
+        // Auto scrolling
         XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
         XCTAssert(carousel.otherElements["carouselElement_5"].wait(for: \.isHittable, toEqual: true, timeout: 3))
-        sleep(3)
+        sleep(2)
         XCTAssert(carousel.otherElements["carouselElement_6"].wait(for: \.isHittable, toEqual: true, timeout: 3))
-        sleep(3)
+        sleep(2)
         XCTAssert(carousel.otherElements["carouselElement_7"].wait(for: \.isHittable, toEqual: true, timeout: 3))
-        sleep(3)
+        sleep(2)
+        XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        
+        // Manual scrolling
+        swipeLeft(carousel: carousel)
+        swipeLeft(carousel: carousel)
+        XCTAssert(carousel.otherElements["carouselElement_6"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        
+        // Auto scrolling
+        sleep(2)
+        XCTAssert(carousel.otherElements["carouselElement_7"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        sleep(2)
         XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
     }
 }
