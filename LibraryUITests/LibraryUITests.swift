@@ -29,6 +29,12 @@ final class LibraryUITests: XCTestCase {
         app.terminate()
     }
     
+    private func printChildren(of parent: XCUIElement, matching type: XCUIElement.ElementType = .any) {
+        for child in parent.descendants(matching: type).allElementsBoundByAccessibilityElement {
+            debugPrint("child of type: \(child.elementType) with identifier: \(child.identifier)")
+        }
+    }
+    
     private func swipeLeft(carousel: XCUIElement) {
 #if os(iOS) || os(visionOS)
         carousel.swipeLeft(velocity: .slow)
@@ -62,6 +68,14 @@ final class LibraryUITests: XCTestCase {
         stepper.buttons["minus"]
 #else
         stepper.decrementArrows.firstMatch
+#endif
+    }
+    
+    private func getSwitch(for identifier: String) -> XCUIElement {
+#if os(iOS)
+        app.switches[identifier].switches.firstMatch
+#else
+        app.switches[identifier]
 #endif
     }
 
@@ -229,10 +243,16 @@ final class LibraryUITests: XCTestCase {
     
     func testAutoScrollingByDefault() throws {
         searchField.firstMatch.typeText("07")
-        app.buttons["07: Auto Scrolling by Default"].tap()
+        app.buttons["07: Auto Scrolling"].tap()
         
         let carousel = app.scrollViews["carousel"]
         XCTAssert(carousel.waitForExistence(timeout: 3))
+        
+        let toggle = getSwitch(for: "toggle")
+        #if !os(macOS)
+        // Observation: checking for existence fails the next XCTAssert on macOS
+        XCTAssert(toggle.waitForExistence(timeout: 3))
+        #endif
         
         // Auto scrolling
         XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
@@ -253,6 +273,11 @@ final class LibraryUITests: XCTestCase {
         sleep(2)
         XCTAssert(carousel.otherElements["carouselElement_7"].wait(for: \.isHittable, toEqual: true, timeout: 3))
         sleep(2)
+        XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
+        
+        // Auto scrolling disabled
+        toggle.tap()
+        sleep(3)
         XCTAssert(carousel.otherElements["carouselElement_4"].wait(for: \.isHittable, toEqual: true, timeout: 3))
     }
 }
